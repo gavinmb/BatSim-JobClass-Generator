@@ -11,7 +11,7 @@ The input JSON must be of this format:
     "Average_wallclock_time": 120,
     "SD_wallclock_time": 10,
     "Percentage_of_workload": 0.3
-	}
+  }
 ],
   "Class B": [
   {
