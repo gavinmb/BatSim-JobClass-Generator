@@ -23,12 +23,11 @@ The input JSON must be of this format:
 ]
 ```
 
-All profiles are set up with the following configuration:
+All profiles are set up with the BatSim delay profile (the following configuration):
 
 ```json
-  "type": "parallel_homogeneous",
-  "cpu": 50e10,
-  "com": 0
+  "type": "delay",
+  "delay":
 ```
 
 ## Usage
