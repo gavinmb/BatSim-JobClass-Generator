@@ -1,0 +1,34 @@
+{
+	"Class A": [
+  {
+    "num_nodes": 1,
+    "Average_wallclock_time": 120,
+    "SD_wallclock_time": 10,
+    "Percentage_of_workload": 0.3
+	}
+],
+	"Class B": [
+  {
+    "num_nodes": 2,
+    "Average_wallclock_time": 3600,
+    "SD_wallclock_time": 500,
+    "Percentage_of_workload": 0.2
+  }
+],
+	"Class C": [
+	{
+	"num_nodes": 5,
+	"Average_wallclock_time": 1300,
+	"SD_wallclock_time": 300,
+	"Percentage_of_workload": 0.4
+	}
+],
+	"Class D": [
+	{
+	"num_nodes": 8,
+	"Average_wallclock_time": 200,
+	"SD_wallclock_time": 50,
+	"Percentage_of_workload": 0.1
+	}
+]
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>README.md</title><style></style></head><body id="preview">
+<h2 class="code-line" data-line-start=0 data-line-end=1><a id="BatSim_Job_Workload_Generator_0"></a>BatSim Job Workload Generator</h2>
+<p class="has-line-data" data-line-start="2" data-line-end="4">This program takes in an input JSON file of Job Class types and coverts it to a BatSim JSON workload file that can be run with BatSim. Wall-clock times are normally distributed and submit times are exponentially distributed.<br>
+The input JSON must be of this format:</p>
+<pre><code class="has-line-data" data-line-start="6" data-line-end="24" class="language-json">{
+  "<span class="hljs-attribute">Class A</span>": <span class="hljs-value">[
+  {
+    "<span class="hljs-attribute">num_nodes</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+    "<span class="hljs-attribute">Average_wallclock_time</span>": <span class="hljs-value"><span class="hljs-number">120</span></span>,
+    "<span class="hljs-attribute">SD_wallclock_time</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
+    "<span class="hljs-attribute">Percentage_of_workload</span>": <span class="hljs-value"><span class="hljs-number">0.3</span>
+    </span>}
+]</span>,
+  "<span class="hljs-attribute">Class B</span>": <span class="hljs-value">[
+  {
+    "<span class="hljs-attribute">num_nodes</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+    "<span class="hljs-attribute">Average_wallclock_time</span>": <span class="hljs-value"><span class="hljs-number">3600</span></span>,
+    "<span class="hljs-attribute">SD_wallclock_time</span>": <span class="hljs-value"><span class="hljs-number">500</span></span>,
+    "<span class="hljs-attribute">Percentage_of_workload</span>": <span class="hljs-value"><span class="hljs-number">0.2</span>
+  </span>}
+]
+</span></code></pre>
+<p class="has-line-data" data-line-start="24" data-line-end="25">All profiles are set up with the following configuration:</p>
+<pre><code class="has-line-data" data-line-start="27" data-line-end="31" class="language-json">  "type": "parallel_homogeneous",
+  "cpu": 50e10,
+  "com": 0
+</code></pre>
+<h2 class="code-line" data-line-start=32 data-line-end=33><a id="Usage_32"></a>Usage</h2>
+<p class="has-line-data" data-line-start="34" data-line-end="35">job_generator.py</p>
+<p class="has-line-data" data-line-start="36" data-line-end="37">Usage: -j &lt;job count&gt; -b &lt;scale parameter&gt; [-r &lt;total resources&gt;] -i &lt;input file name&gt; -o &lt;output file name&gt;</p>
+<ul>
+<li class="has-line-data" data-line-start="38" data-line-end="39">-j The total number of jobs</li>
+<li class="has-line-data" data-line-start="39" data-line-end="40">-b The scale parameter (beta) of the exponentially distributed submit times</li>
+<li class="has-line-data" data-line-start="40" data-line-end="41">-r [optional] The total number of resources (defaults to max of num_nodes from Classes)</li>
+<li class="has-line-data" data-line-start="41" data-line-end="42">-i The input job class JSON file</li>
+<li class="has-line-data" data-line-start="42" data-line-end="44">-o The output BatSim JSON file (must have JSON extension)</li>
+</ul>
+<p class="has-line-data" data-line-start="44" data-line-end="45">Use -h for help at the command line</p>
+</body></html>
