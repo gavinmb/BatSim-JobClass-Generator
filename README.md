@@ -1,33 +1,34 @@
 ## BatSim Job Workload Generator
 
-This program takes in an input JSON file of Job Class types and coverts it to a BatSim JSON workload file that can be run with BatSim. Wall-clock times are normally distributed and submit times are exponentially distributed.
+This program takes in an input JSON file of Job Class types and coverts it to a BatSim JSON workload file that can be run with BatSim. Execution times are normally distributed and submit times are exponentially distributed.
 The input JSON must be of this format:
 
 ```json
 {
-  "Class A": [
-  {
-    "num_nodes": 1,
-    "Average_wallclock_time": 120,
-    "SD_wallclock_time": 10,
-    "Percentage_of_workload": 0.3
-  }
-],
-  "Class B": [
-  {
-    "num_nodes": 2,
-    "Average_wallclock_time": 3600,
-    "SD_wallclock_time": 500,
-    "Percentage_of_workload": 0.2
-  }
-]
+   "Class A":[
+      {
+         "num_nodes":1,
+         "Average_execution_time":120,
+         "SD_execution_time":10,
+         "Percentage_of_workload":0.3
+      }
+   ],
+   "Class B":[
+      {
+         "num_nodes":2,
+         "Average_execution_time":3600,
+         "SD_execution_time":500,
+         "Percentage_of_workload":0.2
+      }
+   ],
+}
 ```
 
 All profiles are set up with the BatSim delay profile (the following configuration):
 
 ```json
   "type": "delay",
-  "delay":
+  "delay": (execution time)
 ```
 
 ## Usage

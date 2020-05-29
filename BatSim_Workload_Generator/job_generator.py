@@ -64,28 +64,28 @@ while (sum(classJobs) != numOfJobs):
     excess[ind] = 0
 
 # dictionary of jobs and profiles
-# creates according to each class (wallclock, number of nodes)
+# creates according to each class (execution time, number of nodes)
 profiles = {}
 jobs = []
 classJobsIndex = 0
-profileIndex = 1
 for ind, val in enumerate(jobClasses):
+    profileIndex = 1
     nodes = (data["Class {}".format(val)][0]['num_nodes'])
-    mean = (data["Class {}".format(val)][0]['Average_wallclock_time'])
-    SD = (data["Class {}".format(val)][0]['SD_wallclock_time'])
+    mean = (data["Class {}".format(val)][0]['Average_execution_time'])
+    SD = (data["Class {}".format(val)][0]['SD_execution_time'])
     for y in range(0, classJobs[classJobsIndex]):
-        wallclock = np.random.normal(mean, SD)
+        execution = np.random.normal(mean, SD)
         j = {
             "id": "",
             "profile": "Profile{}{}".format(val, profileIndex),
             "res": nodes,
             "subtime": "",
-            # "walltime": round(wallclock)
+            # "walltime": round(execution)
             }
         p = {
             "Profile{}{}".format(val, profileIndex): {
             "type": "delay",
-            "delay": round(wallclock),
+            "delay": round(execution),
             }
         }
         profiles.update(p)
